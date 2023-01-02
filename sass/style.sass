@@ -9,6 +9,7 @@ $btnBackground: #3a342b
 $btnHover: #201d17
 $borderColor: rgba(58, 52, 43, 0.7)
 $sectionBackground: #e5e5e5
+$sectionBackgroundDark: #d3d3d3
 
 body
 	font-family: $fontFamily
@@ -55,6 +56,10 @@ a
 .section 
 	padding: 50px 0
 	background-color: $sectionBackground
+	
+.section_clients, 
+.section_services	
+	background-color: $sectionBackgroundDark	
 
 .container 
 	margin: 0 auto
@@ -313,7 +318,7 @@ hr
 			opacity: 1	
 		&:hover .about-us__social
 			opacity: 1
-
+			pointer-events: all
 
 	&__social 
 		position: absolute
@@ -327,6 +332,7 @@ hr
 		gap: 15px
 
 		opacity: 0
+		pointer-events: none
 		transition: 0.2s ease
 
 	&__icon 
@@ -356,6 +362,89 @@ hr
 			opacity: 1			
 	
 
+	
+	/* Clients */
+.clients
+
+	&__subtitle
+		margin-bottom: 50px
+
+	&__text 
+		max-width: 720px
+
+		padding: 0 15px	
+		margin: 0 auto
+	
+	&__swiper 
+		margin-bottom: 50px 
+
+	&__wrapper 
+		margin-bottom: 15px 
+
+	&__pagination 
+		position: static	!important
+		transform: none !important
+		margin: 0 auto !important
+
+		align-self:  center
+
+
+	&__slide 
+		display: flex
+		justify-content: center
+		align-items: center
+
+	&__logo 
+		width: 290px
+		transition: 0.2s ease
+		& img 
+			width: 100%
+			height: 100%
+		&:hover
+			opacity: 0.5
+
+			display: block
+
+	&__btns 
+		width: 290px
+
+		display: flex
+		justify-content: space-between
+
+		margin: 0 auto
+
+	&__btn-prev,
+	&__btn-next 
+		position: static !important
+		transform: none !important
+		margin: 0 !important
+
+		width: 60px !important
+		height: 60px !important
+
+		display: none !important
+
+		transition: 0.2s ease
+		& img 
+			width: 100%
+			height: 100%
+
+			display: block
+		&::after
+			content: none !important
+		&:hover
+			opacity: 0.5	
+
+.swiper-pagination-bullet	
+	width: 16px !important
+	height: 4px !important
+	
+	border-radius: 1px !important
+	opacity: 0.6 !important
+	background: $defaultColor !important
+
+.swiper-pagination-bullet-active	
+	opacity: 1 !important
 
 
 
@@ -382,6 +471,13 @@ hr
 		&__content 
 			padding: 0
 	
+	/* Clients */
+	.clients
+		&__logo
+			width: 200px	
+
+		&__text 
+			padding: 0	
 
 
 
@@ -433,6 +529,12 @@ hr
 
 		&__img 
 			height: 250px			
+
+	/* Clients */		
+	.clients	
+		&__btn-prev,
+		&__btn-next 
+			display: block !important
 
 
 

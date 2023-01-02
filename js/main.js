@@ -11,4 +11,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   activeBurger();
+
+  /* Clients Swiper */
+  const clientsSwiper = new Swiper(".clients__swiper", {
+    loop: true,
+
+    pagination: {
+      el: ".clients__pagination",
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
+    },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+
+    navigation: {
+      nextEl: ".clients__btn-next",
+      prevEl: ".clients__btn-prev",
+    },
+  });
 });
