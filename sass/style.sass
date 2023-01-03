@@ -293,8 +293,12 @@ hr
 		text-align: center
 		color: #fff
 
+		transition: 0.2s ease
+
 		padding: 10px 0
 		&:hover
+			background-color: $btnHover
+		&.active
 			background-color: $btnHover
 
 
@@ -422,7 +426,7 @@ hr
 .icon 
 	position: relative	
 	
-	width: 100%
+	width: 40px
 	height: 40px
 	& img
 		position: absolute
@@ -435,11 +439,13 @@ hr
 		display: block
 
 		transition: 0.2s ease
-		&:first-child
-			opacity: 1
-		&:last-child
-			opacity: 0	
-.icon:hover 
+
+.icon_hover img		
+	&:first-child
+		opacity: 1
+	&:last-child
+		opacity: 0	
+.icon_hover:hover 
 	& img:first-child
 		opacity: 0				
 	& img:last-child
@@ -841,8 +847,6 @@ hr
 		&__body	
 			padding: 0
 
-	/* Footer */
-	.footer	
 
 
 @media (min-width: 768px) 
@@ -854,6 +858,28 @@ hr
 	.header 
 		&__burger 
 			display: none		
+
+		&__content
+			display: flex
+			justify-content: space-between
+
+	/* Nav */
+	.nav 
+		position: static
+		height: auto
+
+		background: none
+		& ul 
+			display: flex
+			justify-content: space-between
+
+		&__items	
+			font-size: 12px
+			padding: 0
+			&:hover
+				background: none
+				opacity: 0.5
+				
 
 	/* About Us */
 	.about-us 
@@ -894,6 +920,11 @@ hr
 	/* Section */
 	.section	
 		padding: 100px 0
+
+	/* Nav */
+	.nav	
+		&__items
+			font-size: 16px
 
 	/* Container */
 	.container 
@@ -942,6 +973,7 @@ hr
 	/* Footer */
 	.section_footer
 		padding: 50px 0	
+
 
 
 @media (min-width: 1200px) 

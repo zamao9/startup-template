@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       defaultItems = document.querySelector(".header__items-default"),
       activeItems = document.querySelector(".header__items-active"),
       nav = document.querySelector(".nav"),
+      links = document.querySelectorAll(".nav__items"),
       background = document.querySelector(".header__background"),
       body = document.getElementsByTagName("body");
 
@@ -23,8 +24,50 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.remove("active");
       body[0].classList.remove("active");
     });
+
+    for (let i = 0; links.length > i; ++i) {
+      links[i].addEventListener("click", (e) => {
+        for (let i = 0; links.length > i; ++i) {
+          links[i].classList.remove("active");
+        }
+        e.currentTarget.classList.add("active");
+        background.classList.remove("active");
+        defaultItems.classList.remove("active");
+        activeItems.classList.remove("active");
+        nav.classList.remove("active");
+        body[0].classList.remove("active");
+      });
+    }
   };
   activeBurger();
+
+  /* Nav Links Active On Scroll */
+  const links = document.querySelectorAll(".nav__items"),
+    section = document.querySelectorAll(".section"),
+    header = document.querySelector(".header__head"),
+    home = document.querySelector(".header");
+  const navInit = (link, section, header) => {
+    section.forEach((section) => {
+      if (window.pageYOffset + header.offsetHeight >= section.offsetTop) {
+        link.forEach((li) => {
+          li.classList.remove("active");
+          if (li.dataset.section === section.dataset.section) {
+            li.classList.add("active");
+          }
+          if (window.pageYOffset < home.offsetHeight) {
+            li.classList.remove("active");
+          }
+        });
+      }
+    });
+  };
+  navInit(links, section, header);
+  window.addEventListener("scroll", () => {
+    navInit(links, section, header);
+  });
+  window.addEventListener("resize", () => {
+    navInit(links, section, header);
+  });
 
   /* Header Active */
   window.onscroll = () => {
@@ -65,5 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".clients__btn-next",
       prevEl: ".clients__btn-prev",
     },
+  });
+});
+
+/* Nav Scroll */
+$(function () {
+  $("[data-scroll").click(function (event) {
+    event.preventDefault();
+
+    let blockId = $(this).data("scroll"),
+      header = document.querySelector(".header__head");
+
+    let blockOffset = $(blockId).offset().top - header.offsetHeight;
+
+    $("html, body").animate(
+      {
+        scrollTop: blockOffset,
+      },
+      900
+    );
   });
 });
