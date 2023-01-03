@@ -10,6 +10,7 @@ $btnHover: #201d17
 $borderColor: rgba(58, 52, 43, 0.7)
 $sectionBackground: #e5e5e5
 $sectionBackgroundDark: #d3d3d3
+$footerBackground: #0a0807
 
 body
 	font-family: $fontFamily
@@ -17,6 +18,8 @@ body
 	color: $defaultColor
 	line-height: 1.5
 	font-weight: 400
+	&.active
+		overflow: hidden
 
 a 
 	text-decoration: none
@@ -112,6 +115,25 @@ hr
 
 		background-color: rgba(0, 0, 0, 0.5)
 
+	&__background
+		position: fixed
+		top: 0
+		left: 0
+
+		width: 100%
+		height: 100vh
+
+		background-color: rgba(0, 0, 0, 0.5)
+		backdrop-filter: blur(3px)
+		-webkit-backdrop-filter: blur(3px)
+
+		transition: 0.4s ease
+		opacity: 0
+		pointer-events: none
+		&.active
+			opacity: 1
+			pointer-events: all
+
 	&__head 
 		width: 100%
 		
@@ -119,6 +141,10 @@ hr
 		z-index: 5	
 		top: 0
 		left: 0
+
+		transition: 0.2s ease
+		&.active
+			background-color: $footerBackground
 
 	&__content
 		max-width: 1140px
@@ -235,6 +261,41 @@ hr
 
 	&__btn 
 		color: $whiteColor
+
+
+
+/* Nav */	
+.nav
+	position: absolute
+	z-index: 9
+	top: 0
+	right: -100%
+
+	width: 80%
+	height: 100vh
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+	transition: 0.4s ease
+
+	background-color: $footerBackground
+	& ul
+		width: 100%
+	&.active	
+		right: 0
+
+	&__items 
+		display: block
+
+		text-transform: uppercase
+		text-align: center
+		color: #fff
+
+		padding: 10px 0
+		&:hover
+			background-color: $btnHover
 
 
 
@@ -357,52 +418,52 @@ hr
 			background-color: rgba(0, 0, 0, 0.5)
 		&:hover::after 
 			opacity: 1	
-		&:hover .about-us__social
-			opacity: 1
-			pointer-events: all
 
-	&__social 
+.icon 
+	position: relative	
+	
+	width: 100%
+	height: 40px
+	& img
 		position: absolute
-		z-index: 2
-		bottom: 15%
-		left: 50%
-		transform: translateX(-50%)
+		top: 0
+		left: 0
 
-		display: grid
-		grid-template-columns: repeat(4, 40px)
-		gap: 15px
-
-		opacity: 0
-		pointer-events: none
-		transition: 0.2s ease
-
-	&__icon 
-		position: relative	
-		
 		width: 100%
-		height: 40px
-		& img
-			position: absolute
-			top: 0
-			left: 0
+		height: 100%
 
-			width: 100%
-			height: 100%
+		display: block
 
-			display: block
-
-			transition: 0.2s ease
-			&:first-child
-				opacity: 1
-			&:last-child
-				opacity: 0	
-	&__icon:hover 
-		& img:first-child
-			opacity: 0				
-		& img:last-child
+		transition: 0.2s ease
+		&:first-child
+			opacity: 1
+		&:last-child
+			opacity: 0	
+.icon:hover 
+	& img:first-child
+		opacity: 0				
+	& img:last-child
 			opacity: 1			
 
+.social 
+	position: absolute
+	z-index: 2
+	bottom: 15%
+	left: 50%
+	transform: translateX(-50%)
 
+	display: grid
+	grid-template-columns: repeat(4, 40px)
+	justify-content: center
+	gap: 15px
+
+	opacity: 0
+	pointer-events: none
+	transition: 0.2s ease	
+
+.about-us__img:hover .social	
+	opacity: 1
+	pointer-events: all
 
 /* Project */	
 .section_project 
@@ -671,7 +732,8 @@ hr
 
 			border: 1px solid $borderColor
 			background: none
-			box-shadow: 0
+			box-shadow: none
+			border-radius: 0
 			padding: 8px 16px
 			&::placeholder
 				font-size: 16px
@@ -684,7 +746,44 @@ hr
 			max-width: 250px
 
 	&__btn
-		color: #fff
+		color: $whiteColor
+
+
+
+/* Footer */		
+.section_footer	
+	background-color: $footerBackground
+	padding: 30px 0
+
+.footer
+
+	&__hr
+		background-color: $whiteColor
+
+	&__subtitle
+		color: $whiteColor
+		text-transform: uppercase
+
+		margin-bottom: 0
+
+	&__social
+		position: static
+		transform: none
+
+		display: flex
+		flex-wrap: wrap
+
+		max-width: 400px
+
+		margin:0 auto 15px
+		
+		pointer-events: all
+		opacity: 1
+		& a 
+			width: 40px
+			height: 40px
+
+			margin: 0 8px
 
 
 
@@ -742,6 +841,8 @@ hr
 		&__body	
 			padding: 0
 
+	/* Footer */
+	.footer	
 
 
 @media (min-width: 768px) 
@@ -838,6 +939,9 @@ hr
 		&__btn-next 
 			display: block !important
 
+	/* Footer */
+	.section_footer
+		padding: 50px 0	
 
 
 @media (min-width: 1200px) 

@@ -17,6 +17,8 @@
     <header class="header">
       <div class="header__head">
         <div class="header__content">
+          <div class="header__background"></div>
+
           <div class="header__logo">
             <a href="index.html">startup</a>
           </div>
@@ -25,6 +27,32 @@
             <div class="header__items-default"></div>
             <div class="header__items-active"></div>
           </div>
+
+          <nav class="nav">
+            <ul>
+              <li>
+                <a href="#" class="nav__items">home</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">services</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">about us</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">works</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">recent posts</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">clients</a>
+              </li>
+              <li>
+                <a href="#" class="nav__items">get in touch</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 
@@ -146,7 +174,7 @@
             <div class="about-us__items">
               <div class="about-us__img">
                 <img src="img/team/1.jpg" alt="" />
-                <div class="about-us__social">
+                <div class="social about-us__social">
                   <a
                     href="https://ru-ru.facebook.com/"
                     target="_blank"
@@ -195,7 +223,7 @@
             <div class="about-us__items">
               <div class="about-us__img">
                 <img src="img/team/2.jpg" alt="" />
-                <div class="about-us__social">
+                <div class="social about-us__social">
                   <a
                     href="https://ru-ru.facebook.com/"
                     target="_blank"
@@ -244,7 +272,7 @@
             <div class="about-us__items">
               <div class="about-us__img">
                 <img src="img/team/3.jpg" alt="" />
-                <div class="about-us__social">
+                <div class="social about-us__social">
                   <a
                     href="https://ru-ru.facebook.com/"
                     target="_blank"
@@ -293,7 +321,7 @@
             <div class="about-us__items">
               <div class="about-us__img">
                 <img src="img/team/4.jpg" alt="" />
-                <div class="about-us__social">
+                <div class="social about-us__social">
                   <a
                     href="https://ru-ru.facebook.com/"
                     target="_blank"
@@ -630,11 +658,48 @@
               <textarea name="text" placeholder="write your message"></textarea>
             </div>
 
-            <div class="btn get-in-touch__btn">send message</div>
+            <button class="btn get-in-touch__btn">send message</button>
           </form>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="section section_footer">
+      <div class="container footer">
+        <div class="container__head">
+          <div class="social footer__social">
+            <a href="https://ru-ru.facebook.com/" target="_blank" class="icon">
+              <img src="icons/facebook default.png" alt="" />
+              <img src="icons/facebook hover.png" alt="" />
+            </a>
+
+            <a href="https://twitter.com/?lang=ru" target="_blank" class="icon">
+              <img src="icons/twitter default.png" alt="" />
+              <img src="icons/twitter hover.png" alt="" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/feed/"
+              target="_blank"
+              class="icon"
+            >
+              <img src="icons/linkedin default.png" alt="" />
+              <img src="icons/linkedin hover.png" alt="" />
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank" class="icon">
+              <img src="icons/instagram default.png" alt="" />
+              <img src="icons/instagram hover.png" alt="" />
+            </a>
+          </div>
+          <hr class="footer__hr" />
+          <div class="subtitle footer__subtitle">
+            <p>2023 startup</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
