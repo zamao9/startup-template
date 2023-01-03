@@ -57,8 +57,7 @@ a
 	padding: 50px 0
 	background-color: $sectionBackground
 	
-.section_clients, 
-.section_services	
+.section_dark	
 	background-color: $sectionBackgroundDark	
 
 .container 
@@ -270,6 +269,48 @@ hr
 
 
 
+/* Latest Work */		
+.work
+
+	&__filter 
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		flex-wrap: wrap
+
+		max-width: 560px
+
+		margin: 0 auto 30px
+
+	&__items 
+		text-transform: capitalize
+		cursor: pointer
+
+		transition: 0.2s ease
+		margin-bottom: 15px	
+		&:last-child
+			margin: 0
+		&:hover 
+			opacity: 0.5
+
+	&__content 
+		display: grid
+		justify-content: center
+		grid-template-columns: 290px
+		gap: 15px		
+
+	&__img 
+		width: 100%
+		height: 290px
+		& img 
+			width: 100%
+			height: 100%
+
+			display: block
+
+
+
 /* About Us */	
 .about-us 
 
@@ -362,8 +403,48 @@ hr
 			opacity: 1			
 	
 
+
+/* Project */	
+.section_project 
+	position: relative
+
+	padding: 30px 0
+	background: url('../img/project background.jpg') center / cover no-repeat
+	&:after 
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		z-index: 1
+
+		width: 100%
+		height: 100%
+
+		background-color: rgba(0, 0, 0, 0.5)
+
+.project 
+	min-height: 200px
+
+	position: relative
+	z-index: 2
+
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	&__title 
+		max-width: 560px
+
+		line-height: 1.2
+		color: $whiteColor
+
+		padding: 0 15px
+	&__btn	
+		color: $whiteColor
+
+
 	
-	/* Clients */
+/* Clients */
 .clients
 
 	&__subtitle
@@ -471,6 +552,11 @@ hr
 		&__content 
 			padding: 0
 	
+	/* Project */
+	.project	
+		&__title 
+			padding: 0
+
 	/* Clients */
 	.clients
 		&__logo
@@ -500,6 +586,19 @@ hr
 		&__img 
 			height: 290px			
 
+	/* Latest Work */
+	.work 
+		&__filter 
+			flex-direction: row
+
+		&__items 
+			margin: 0 15px 0 0 
+			&:last-child
+				margin: 0
+
+
+		&__content 
+			grid-template-columns: repeat(2, 290px)	
 
 
 @media (min-width: 992px) 
@@ -529,6 +628,15 @@ hr
 
 		&__img 
 			height: 250px			
+
+	/* Latest Work */
+	.work 
+		&__content 
+			grid-template-columns: repeat(3, 290px)
+
+	/* Project */
+	.section_project
+		padding: 30px 0	
 
 	/* Clients */		
 	.clients	
