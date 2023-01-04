@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (li.dataset.section === section.dataset.section) {
             li.classList.add("active");
           }
-          if (window.pageYOffset < home.offsetHeight) {
+          if (window.pageYOffset + header.offsetHeight < home.offsetHeight) {
             li.classList.remove("active");
           }
         });
