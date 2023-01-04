@@ -82,6 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  /* Work Filter */
+  const filterLinks = document.querySelectorAll(".work__items"),
+    filterContent = document.querySelectorAll(".work__img");
+  const filter = (category, items) => {
+    items.forEach((el) => {
+      let elFiltered = !el.classList.contains(category),
+        showAll = category.toLowerCase() === "all";
+
+      if (elFiltered && !showAll) {
+        el.classList.add("hide");
+      } else {
+        el.classList.remove("hide");
+      }
+    });
+  };
+  filterLinks.forEach((el) => {
+    el.addEventListener("click", () => {
+      let currentCategory = el.dataset.filter;
+      filter(currentCategory, filterContent);
+    });
+  });
+
   /* Clients Swiper */
   const clientsSwiper = new Swiper(".clients__swiper", {
     loop: true,
